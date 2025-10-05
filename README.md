@@ -1,159 +1,147 @@
-📈 Stock Price Forecasting Project
+📈 Stock Forecasting Project
 
-1️⃣ Overview
+Overview:
+This project focuses on forecasting stock prices using historical data from Apple Inc. (AAPL). The goal is to predict future stock movements and visualize trends using ARIMA, Prophet, and Moving Averages. An interactive Streamlit dashboard allows users to explore historical and predicted stock prices.
 
-This project analyzes historical stock price data for Apple Inc. (AAPL) and forecasts future prices using ARIMA and Prophet models.
-The project demonstrates a full data analytics workflow including data cleaning, feature engineering, EDA, time-series forecasting, and visualization.
+Key objectives:
 
-Key Goals:
+Perform exploratory data analysis (EDA) to understand stock trends and volatility.
 
-Understand stock price trends and volatility.
+Implement ARIMA and Prophet models for forecasting.
 
-Compare ARIMA vs Prophet forecasting models.
+Compare forecasts and visualize results interactively with Plotly.
 
-Build a reproducible workflow suitable for dashboards or investment insights.
+Build a Streamlit app for real-time stock visualization.
 
-2️⃣ Tech Stack
+Tech Stack:
 
-Python 3.11
+Python
 
-Libraries: pandas, numpy, matplotlib, seaborn, plotly, statsmodels, prophet, scikit-learn, streamlit
+Pandas & NumPy (Data Manipulation)
 
-Jupyter Notebook for exploratory data analysis and modeling
+Matplotlib & Seaborn (Static Visualizations)
 
-Streamlit (optional) for interactive dashboard
+Plotly (Interactive Visualizations)
 
-Git & GitHub for version control
+Statsmodels (ARIMA Modeling)
 
-3️⃣ Folder Structure
+Prophet (Time Series Forecasting)
+
+Streamlit (Interactive Dashboard)
+
+Jupyter Notebook (Analysis & EDA)
+
+Folder Structure:
 ```
 stock-forecasting/
-├─ data/               # Raw and cleaned CSVs
-│   ├─ AAPL_raw.csv
-│   ├─ AAPL_cleaned.csv
-│   ├─ AAPL_arima_forecasts.csv
-│   └─ AAPL_prophet_forecasting.csv
-├─ images/             # All saved plots for README & analysis
-├─ notebooks/          # Jupyter notebooks for each step
-│   ├─ 01_data_collection.ipynb
-│   ├─ 02_cleaning_feature_engineering.ipynb
-│   ├─ 03_eda_visualization.ipynb
-│   └─ 04_forecasting_models.ipynb
-├─ src/                # Python scripts (currently empty)
-├─ streamlit_app.py    # Optional interactive dashboard
-├─ requirements.txt
+├─ data/ # Raw and processed datasets
+│ ├─ AAPL_raw.csv
+│ ├─ AAPL_cleaned.csv
+│ ├─ AAPL_arima_forecasts.csv
+│ └─ AAPL_prophet_forecasting.csv
+├─ images/ # Saved plots
+├─ notebooks/ # Jupyter notebooks
+│ ├─ 01_data_collection.ipynb
+│ ├─ 02_cleaning_feature_engineering.ipynb
+│ ├─ 03_eda_visualization.ipynb
+│ └─ 04_forecasting_models.ipynb
+├─ src/ # Python scripts (optional)
+├─ streamlit_app.py # Streamlit interactive app
+├─ requirements.txt # Dependencies
 └─ README.md
 ```
 
-4️⃣ Project Workflow
+Project Workflow:
 
-Step 1: Data Collection
+Data Collection
 
-Download historical stock price data using Yahoo Finance API (yfinance library).
+Fetch historical stock data using yfinance.
 
-Save raw data to data/AAPL_raw.csv.
+Store raw data in data/AAPL_raw.csv.
 
-Step 2: Cleaning & Feature Engineering
+Data Cleaning & Feature Engineering
 
-Convert Date column to datetime.
+Handle missing values and duplicate entries.
 
-Add moving averages (MA7, MA30) and volatility (Volatility7, Volatility30).
-
-Handle missing values and numeric conversion.
+Compute features like Moving Averages (7-day, 30-day) and Volatility.
 
 Save cleaned data to data/AAPL_cleaned.csv.
 
-Step 3: Exploratory Data Analysis (EDA)
+Exploratory Data Analysis (EDA)
 
-Visualize closing price over time.
+Plot historical closing prices, moving averages, and volatility.
 
-Plot moving averages and volatility.
+Generate interactive visualizations with Plotly.
 
-Generate interactive plots using Plotly.
+Forecasting
 
-Save plots to images/ folder for portfolio and README.
+ARIMA Model: Forecast next 30 days of stock prices.
 
-Step 4: Forecasting Models
-ARIMA Model
+Prophet Model: Forecast 1-year future prices with trend and seasonality.
 
-Fit ARIMA (5,1,0) to closing prices.
+Compare ARIMA vs Prophet forecasts.
 
-Forecast next 30 days.
+Save forecasted datasets: AAPL_arima_forecasts.csv and AAPL_prophet_forecasting.csv.
 
-Plot historical + forecasted prices and save to images/arima_forecast.png.
+Streamlit Dashboard
 
-Prophet Model
+Interactive plots for historical data, forecasts, and moving averages.
 
-Fit Prophet model on cleaned data.
+Users can select date ranges and visualize predictions dynamically.
 
-Forecast next 365 days.
+Key Insights:
 
-Plot trend, weekly, yearly components, and interactive forecast.
+Moving averages highlight short-term and long-term trends.
 
-Save plots to images/prophet_forecast_interactive.png and images/prophet_components.png.
+ARIMA provides short-term forecast; Prophet captures yearly seasonality.
 
-5️⃣ Insights
+Visualizations reveal periods of high volatility and consistent trends.
 
-Stock Trend: Apple stock shows a strong upward trend with short-term volatility.
+Streamlit app enables easy exploration and interactive analysis.
 
-Moving Averages: Useful for detecting trends and smoothing price fluctuations.
+Visualizations:
 
-Forecast Comparison: ARIMA is short-term accurate; Prophet provides long-term seasonal trends.
+Stock Closing Price: images/closing_price.png
 
-Interactive Visualization: Helps explore forecast patterns and components intuitively.
+Moving Averages: images/moving_averages.png
 
-6️⃣ Visualizations
+Volatility: images/volatility.png
 
-Closing Price
+ARIMA vs Prophet Forecast: images/arima_prophet_forecast.png
 
-Moving Averages
+Run Project Locally:
 
-Volatility
-
-ARIMA Forecast
-
-Prophet Forecast
-
-Prophet Components
-
-⚡ Note: You can open the interactive plots (plotly) in notebooks to explore hover info.
-
-7️⃣ Run Project (Local Setup)
-```
-# 1. Clone the repository
-git clone https://github.com/yourusername stock-forecasting.git
+Clone the repository:
+git clone https://github.com/yourusername/stock-forecasting.git
 cd stock-forecasting
 
-# 2. Create & activate virtual environment
+Create virtual environment:
 python -m venv .venv
-# Windows
-.venv\Scripts\activate
-# Mac/Linux
-source .venv/bin/activate
+Activate it:
 
-# 3. Install dependencies
+Windows: .venv\Scripts\activate
+
+Mac/Linux: source .venv/bin/activate
+
+Install dependencies:
 pip install -r requirements.txt
 
-# 4. Run notebooks or Streamlit dashboard
+Run Jupyter Notebooks (optional):
 jupyter notebook
-# OR
+
+Run Streamlit App:
 streamlit run streamlit_app.py
-```
 
-8️⃣ Challenges & Solutions
+Future Improvements:
 
-Data type issues: Date column was string → converted to datetime.
+Add other stocks and multi-stock comparison.
 
-Missing values: Dropped or filled numeric columns before modeling.
+Deploy Streamlit app online (Heroku or Streamlit Cloud).
 
-Memory issues with Prophet: Limited data and used efficient indexing.
+Include sentiment analysis from news and social media for enhanced forecasting.
 
-Interactive plot saving: Used plotly.write_image to save images for README.
+Author:
 
-9️⃣ Key Takeaways
+Bala Manikanta Kumar – Data Analytics & Python Enthusiast
 
-Complete end-to-end time-series forecasting workflow.
-
-Combines Python, Jupyter, ARIMA, Prophet, and visualization libraries.
-
-Fully reproducible and portfolio-ready for recruiters.
+GitHub: https://github.com/BalaManikanta-Dondapati
