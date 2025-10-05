@@ -1,0 +1,27 @@
+# Data Handling
+pandas>=2.0.3
+numpy>=1.26.0
+
+# Visualization
+matplotlib>=3.8.0
+seaborn>=0.12.2
+plotly>=5.21.0
+kaleido>=0.2.1   # for saving Plotly images
+
+# Time-Series Forecasting
+statsmodels>=0.14.5
+prophet==1.1.7   # prebuilt Windows-friendly version
+
+# Machine Learning & Utilities
+scikit-learn>=1.3.2
+
+# Jupyter Notebooks
+jupyter>=1.0.0
+ipykernel>=6.27.0
+nbformat>=5.9.2
+
+# Streamlit for Dashboard
+streamlit>=1.28.0
+
+# Yahoo Finance API
+yfinance>=0.2.28
