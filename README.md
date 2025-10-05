@@ -1,4 +1,5 @@
 📈 Stock Price Forecasting Project
+
 1️⃣ Overview
 
 This project analyzes historical stock price data for Apple Inc. (AAPL) and forecasts future prices using ARIMA and Prophet models.
