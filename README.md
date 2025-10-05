@@ -45,6 +45,7 @@ stock-forecasting/
 ```
 
 4️⃣ Project Workflow
+
 Step 1: Data Collection
 
 Download historical stock price data using Yahoo Finance API (yfinance library).
@@ -101,6 +102,7 @@ Forecast Comparison: ARIMA is short-term accurate; Prophet provides long-term se
 Interactive Visualization: Helps explore forecast patterns and components intuitively.
 
 6️⃣ Visualizations
+
 Closing Price
 
 Moving Averages
